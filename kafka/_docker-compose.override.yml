@@ -1,0 +1,8 @@
+version: "3"
+services:
+  producer:
+    command: "run wait"
+  consumer1:
+    command: "run wait"
+  consumer2:
+    command: "run wait"

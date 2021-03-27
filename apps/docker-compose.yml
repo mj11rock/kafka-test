@@ -1,0 +1,53 @@
+version: "3"
+services:
+  producer:
+    image: test-producer
+    build: ../producer
+    environment:
+      PRODUCER_ID: 1
+    volumes:
+      - ../producer:/app
+    #command: "run wait"
+    command: "start"
+
+  consumer1:
+    image: test-consumer
+    build: ../consumer
+    environment:
+      CONSUMER_GROUP_ID: "all"
+    volumes:
+      - ../consumer:/app
+    #command: "run wait"
+    command: "start"
+  consumer2:
+    image: test-consumer
+    build: ../consumer
+    environment:
+      CONSUMER_GROUP_ID: "all"
+    volumes:
+      - ../consumer:/app
+    #command: "run wait"
+    command: "start"
+  consumer3:
+    image: test-consumer
+    build: ../consumer
+    environment:
+      CONSUMER_GROUP_ID: "all"
+    volumes:
+      - ../consumer:/app
+    #command: "run wait"
+    command: "start"
+  consumer4:
+    image: test-consumer
+    build: ../consumer
+    environment:
+      CONSUMER_GROUP_ID: "all"
+    volumes:
+      - ../consumer:/app
+    #command: "run wait"
+    command: "start"
+
+networks:
+  default:
+    external: true
+    name: kafka-test

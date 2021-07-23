@@ -7,47 +7,57 @@ services:
       PRODUCER_ID: 1
     volumes:
       - ../producer:/app
-    #command: "run wait"
-    command: "start"
+    command: "run wait"
+    # command: "start"
 
-  consumer1:
-    image: test-consumer
-    build: ../consumer
+  stream1:
+    image: stream-consumer
+    build: ../kafka-stream
     environment:
-      CONSUMER_GROUP_ID: "all"
+      CONSUMER_GROUP_ID: "all1"
     volumes:
-      - ../consumer:/app
-    #command: "run wait"
-    command: "start"
-  consumer2:
-    image: test-consumer
-    build: ../consumer
-    environment:
-      CONSUMER_GROUP_ID: "all"
-    volumes:
-      - ../consumer:/app
-    #command: "run wait"
-    command: "start"
-  consumer3:
-    image: test-consumer
-    build: ../consumer
-    environment:
-      CONSUMER_GROUP_ID: "all"
-    volumes:
-      - ../consumer:/app
-    #command: "run wait"
-    command: "start"
-  consumer4:
-    image: test-consumer
-    build: ../consumer
-    environment:
-      CONSUMER_GROUP_ID: "all"
-    volumes:
-      - ../consumer:/app
-    #command: "run wait"
-    command: "start"
+      - ../kafka-stream:/app
+    # command: "run wait"
+    command: "run start"
+  # consumer1:
+  #   image: test-consumer
+  #   build: ../consumer
+  #   environment:
+  #     CONSUMER_GROUP_ID: "all1"
+  #   volumes:
+  #     - ../consumer:/app
+  #   # command: "run wait"
+  #   command: "start"
+
+  # consumer2:
+  #   image: test-consumer
+  #   build: ../consumer
+  #   environment:
+  #     CONSUMER_GROUP_ID: "all"
+  #   volumes:
+  #     - ../consumer:/app
+  #   #command: "run wait"
+  #   command: "start"
+  # consumer3:
+  #   image: test-consumer
+  #   build: ../consumer
+  #   environment:
+  #     CONSUMER_GROUP_ID: "all"
+  #   volumes:
+  #     - ../consumer:/app
+  #   #command: "run wait"
+  #   command: "start"
+  # consumer4:
+  #   image: test-consumer
+  #   build: ../consumer
+  #   environment:
+  #     CONSUMER_GROUP_ID: "all"
+  #   volumes:
+  #     - ../consumer:/app
+  #   #command: "run wait"
+  #   command: "start"
 
 networks:
   default:
-    external: true
+    external: false
     name: kafka-test

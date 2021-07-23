@@ -1,0 +1,27 @@
+{
+  "noptions": {
+      "metadata.broker.list": "kafka3:19093",
+      "group.id": "all1",
+      "client.id": "kafka-streams-test-name-native",
+      "event_cb": true,
+      "compression.codec": "snappy",
+      "api.version.request": true,
+      "socket.keepalive.enable": true,
+      "socket.blocking.max.ms": 100,
+      "enable.auto.commit": false,
+      "auto.commit.interval.ms": 100,
+      "heartbeat.interval.ms": 250,
+      "retry.backoff.ms": 250
+  },
+  "tconf": {
+      "auto.offset.reset": "earliest",
+      "request.required.acks": 1
+  },
+  "batchOptions": {
+      "batchSize": 5,
+      "commitEveryNBatch": 1,
+      "concurrency": 1,
+      "commitSync": false,
+      "noBatchCommits": false
+  }
+}

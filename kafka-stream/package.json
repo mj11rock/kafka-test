@@ -1,0 +1,17 @@
+{
+  "name": "kafka-stream",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "kafka-streams": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index",
+    "wait": "node wait-sigint.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
